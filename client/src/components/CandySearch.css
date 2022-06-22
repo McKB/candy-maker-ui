@@ -1,0 +1,13 @@
+.inputBox {
+    text-align: center;
+    margin-top: 30px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+input {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.response {
+    margin-top: 20px;
+}
