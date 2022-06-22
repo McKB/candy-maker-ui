@@ -1,8 +1,13 @@
 const express = require('express')
+const path = require('path')
+const cors = require('cors')
 const { getAllManufacturers, getManufacturerById } = require('./controllers/manufacturers')
 const { getAllProducts, getProductsById } = require('./controllers/products')
 
 const app = express()
+
+app.use(express.static('client/build'))
+app.use(cors())
 
 app.get('/api/manufacturers', getAllManufacturers)
 
@@ -12,7 +17,7 @@ app.get('/api/products', getAllProducts)
 
 app.get('/api/products/:id', getProductsById)
 
-app.use('*', (req, res) => { res.sendStatus(404) })
+app.use('*', (req, res) => { res.sendFile(path.resolve(__dirname, 'client/build', 'index.html')) })
 
 app.listen(1337, () => {
   console.log('Listening on port 1337...') // eslint-disable-line no-console
