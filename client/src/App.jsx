@@ -1,11 +1,11 @@
-import CandySearch from './components/CandySearch'
+import Candy from './components/Candy'
 import Title from './components/Title'
 
 function App() {
   return (
     <div className="App">
       <Title/>
-      <CandySearch/>
+      <Candy/>
     </div>
   );
 }
