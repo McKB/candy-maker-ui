@@ -6,20 +6,32 @@ import axios from 'axios'
 const Candy = () => {
     const [searchTerm, setSearchTerm] = useState('')
     const [manuArray, setManuArray] = useState([])
+    const [filteredManuArray, setFilteredManuArray] = useState([])
 
     useEffect(() => {
         fetchManu()
     }, [])
 
+    useEffect(() => {
+        setFilteredManuArray(manuArray.filter(
+            (manu) => { return manu.name.toLowerCase().includes(searchTerm.toLowerCase()) }
+        ))
+    }, [searchTerm, manuArray])
+
     const fetchManu = async () => {
         let fetchedData = await axios.get('http://localhost:1337/api/manufacturers')
         setManuArray(fetchedData.data)
+        setFilteredManuArray(fetchedData.data)
+    }
+
+    const handleSearchTermInput = (event) => {
+        setSearchTerm(event.target.value) 
     }
 
     return (
         <div className='page'>
-            <ManuSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            <ManuList manuArray={manuArray} searchTerm={searchTerm} />
+            <ManuSearch searchTerm={searchTerm} handleSearchTermInput={handleSearchTermInput}/>
+            <ManuList filteredManuArray={filteredManuArray} />
         </div>
     )
 }

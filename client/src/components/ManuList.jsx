@@ -2,13 +2,11 @@ import React from 'react'
 import './ManuList.css'
 
 const ManuList = (props) => {
-    const { manuArray, searchTerm } = props
+    const { filteredManuArray } = props
 
     return (
         <ul>
-            {manuArray.filter(
-                (manu) => { return manu.name.toLowerCase().includes(searchTerm.toLowerCase()) }
-            ).map(
+            {filteredManuArray.map(
                 (manu) => { return <li>{manu.name} {manu.country}</li>}
             )}
         </ul>

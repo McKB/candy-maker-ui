@@ -2,7 +2,7 @@ import React from 'react'
 import './ManuSearch.css'
 
 const ManuSearch = (props) => {
-    const { searchTerm, setSearchTerm } = props
+    const { searchTerm, handleSearchTermInput } = props
 
     return (
         <div className='inputBox'>
@@ -10,7 +10,7 @@ const ManuSearch = (props) => {
                 type="text" 
                 name="search" 
                 value={searchTerm}
-                onChange={(event) => { setSearchTerm(event.target.value) }} 
+                onChange={handleSearchTermInput} 
             />
         </div>
     )
