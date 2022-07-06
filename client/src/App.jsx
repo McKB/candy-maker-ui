@@ -1,6 +1,6 @@
 import React from 'react'
-import Candy from './components/pages/candy/Candy'
-import Error from './components/pages/error/Error'
+import Candy from './components/candy/Candy'
+import Error from './components/error/Error'
 import ManuInfo from './components/pages/manuInfo/ManuInfo'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
