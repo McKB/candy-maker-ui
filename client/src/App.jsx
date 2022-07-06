@@ -1,7 +1,7 @@
 import React from 'react'
-import Candy from './components/candy/Candy'
+import Candy from './components/candyMain/Candy'
 import Error from './components/error/Error'
-import ManuInfo from './components/pages/manuInfo/ManuInfo'
+import ManuInfo from './components/manuInfo/ManuInfo'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const App = () => {

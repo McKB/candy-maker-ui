@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import ManuList from './ManuList'
-import ManuSearch from './ManuSearch'
+import ManuList from '../manuList/ManuList'
+import ManuSearch from '../manuSearch/ManuSearch'
 import axios from 'axios'
 import './Candy.css'
 
