@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ManuList from './ManuList'
 import ManuSearch from './ManuSearch'
 import axios from 'axios'
+import './Candy.css'
 
 const Candy = () => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -30,6 +31,7 @@ const Candy = () => {
 
     return (
         <div className='page'>
+            <h2>Candy Makers</h2>
             <ManuSearch searchTerm={searchTerm} handleSearchTermInput={handleSearchTermInput}/>
             <ManuList filteredManuArray={filteredManuArray} />
         </div>

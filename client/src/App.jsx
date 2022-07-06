@@ -1,13 +1,19 @@
-import Candy from './components/Candy'
-import Title from './components/Title'
+import React from 'react'
+import Candy from './components/pages/candy/Candy'
+import Error from './components/pages/error/Error'
+import ManuInfo from './components/pages/manuInfo/ManuInfo'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Title/>
-      <Candy/>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path="/manufacturers/:id" element={<ManuInfo/>}/>
+        <Route path="/" element={<Candy/>}/>
+        <Route path="*" element={<Error/>}/>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
